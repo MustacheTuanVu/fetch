@@ -514,7 +514,7 @@ export function fetch(input, init) {
     if (request.signal && request.signal.aborted) {
       return reject(new DOMException('Aborted', 'AbortError'))
     }
-
+    var XMLHttpRequest = require('xhr2');
     var xhr = new XMLHttpRequest()
 
     function abortXhr() {
