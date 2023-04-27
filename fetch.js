@@ -561,12 +561,14 @@ export function fetch(input, init) {
     }
 
     xhr.open(request.method, fixUrl(request.url), true)
+    
+    xhr.withCredentials = true
 
-    if (request.credentials === 'include') {
-      xhr.withCredentials = true
-    } else if (request.credentials === 'omit') {
-      xhr.withCredentials = false
-    }
+//     if (request.credentials === 'include') {
+//       xhr.withCredentials = true
+//     } else if (request.credentials === 'omit') {
+//       xhr.withCredentials = false
+//     }
 
     if ('responseType' in xhr) {
       if (support.blob) {
